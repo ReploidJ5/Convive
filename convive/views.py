@@ -17,7 +17,7 @@ def index(request):
         if(request.user.is_staff==False):
             return redirect(reverse('registar'))   
     evento = Evento.objects.get(estado=True)
-    actividades = Actividad.objects.filter(evento=evento)
+    actividades = Actividad.objects.filter(evento=evento).order_by('fecha')
     return render(request, 'index.html',{'evento':evento,'actividades':actividades})
 
 
