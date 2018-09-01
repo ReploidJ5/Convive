@@ -22,18 +22,5 @@ from django.conf.urls.static import static
 from .views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('social_django.urls', namespace='social')),
-    path('logout/', logout, name='logout'),
-    path('login/', Login, name = "login"),
-    path('registrar/', registrar_perfil, name = "registar"),
-    path('', index, name="index"),    
-    path('docentes/', include('docentes.urls')),
-    path('general/', include('general.urls')),
-
+    path('actividad/<int:pk>', ViewActividad, name="actividad"),    
 ]
-
-
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
