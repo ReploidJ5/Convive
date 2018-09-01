@@ -24,7 +24,7 @@ from .views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('social_django.urls', namespace='social')),
-    path('logout/', logout, name='logout'),
+    path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL},name='logout'),
     path('login/', Login, name = "login"),
     path('registrar/', registrar_perfil, name = "registar"),
     path('', index, name="index"),    

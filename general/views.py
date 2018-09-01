@@ -12,14 +12,11 @@ def ViewActividad(request, pk):
     mensaje = ""
     if request.method == 'POST':
         cod = request.POST.get("codigo", "")
-        print(cod)
         try:
             asistencia = Asistencia.objects.get(codigo=cod, actividad=actividad)
-            print(asistencia.estudiante)
             if(asistencia.estudiante is None):
                 asistencia.estudiante = request.user.perfil
                 asistencia.save()
-                print(asistencia.estudiante)            
                 mensaje = "Registro exitoso"
             else:
                 mensaje = "Codigo ya a sido utilizado"
