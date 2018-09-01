@@ -25,9 +25,6 @@ def Login(request):
     if request.method == "GET":
         return render(request, "login.html")
 
-def logout(request):
-    auth.logout(request)
-    return redirect(reverse('login'))
 
 def registrar_perfil(request):
     if request.method == 'POST':
