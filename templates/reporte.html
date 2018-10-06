@@ -56,7 +56,7 @@
         $("#printer").click(function() {
             $(".noprint").attr("hidden","hidden");
             window.print();
-            window.location.reload();
+            $(".noprint").removeAttr('hidden');
         });
     });
 </script>
