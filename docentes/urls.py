@@ -23,4 +23,6 @@ from .views import *
 
 urlpatterns = [
     path('elevacion', docentes, name="docentes"),    
+    path('reporte/<int:semestre>', reporte, name="reporte"),    
+    path('semestres', semestres, name="semestres"),    
 ]
