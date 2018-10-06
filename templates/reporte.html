@@ -27,10 +27,10 @@
             <tbody>
                 {% for i in estudiantes %}
                     <tr>
-                        <td>{{i.carnet}}</td>
-                        <td>{{i.user.first_name|title}} {{i.user.last_name|title}}</td>
+                        <td nowrap>{{i.carnet}}</td>
+                        <td align="center">{{i.user.first_name|title}} {{i.user.last_name|title}}</td>
                         {% for x in i.actividades %}
-                        <td><i {% if x == "check" %} class="material-icons green-text" {% else %} class="material-icons red-text" {% endif %}  >{{x}}</i></td>
+                        <td align="center"><i {% if x == "check" %} class="tiny material-icons green-text" {% else %} class="tiny material-icons red-text" {% endif %}  >{{x}}</i></td>
                         {% endfor %}           
                         <td>{{i.asis}}</td>
                     </tr>
@@ -48,7 +48,7 @@
   text-overflow: ellipsis;
 }
 
-tr>td {
+tr>td, tr>th {
     padding-bottom: 2px;
     padding-top: 2px;
 }
